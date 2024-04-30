@@ -11,13 +11,15 @@ namespace Business.Abstract
 {
     public interface IProductService
     {
-        List<Product> GetAll();
-        List<Product> GetAllByCategoryId(int id);
-        List<Product> GetAllByUnitPrice(decimal min, decimal max);
-        List<ProductDetailDto> GetProductDetails();
+        IDataResult<List<Product>> GetAll();  // List<Product>> T miz
+        IDataResult<List<Product>> GetAllByCategoryId(int id);
+        IDataResult<List<Product>> GetAllByUnitPrice(decimal min, decimal max);
+        IDataResult<List<ProductDetailDto>> GetProductDetails();
 
-        Product GetById(int productId); // tek bir dödnürme mesela tek bir ürüne bakıp detayını görmek
+        IDataResult<Product> GetById(int productId); // tek bir dödnürme mesela tek bir ürüne bakıp detayını görmek
 
         IResult Add(Product product);
+
+        IResult Update(Product product);
     }
 }

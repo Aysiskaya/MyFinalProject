@@ -61,8 +61,8 @@ namespace DataAccess.Concrete.InMemory
 
         public List<ProductDetailDto> GetProductDetails()
         {
-          
-
+            return new List<ProductDetailDto>();
+  
         }
 
         public void Update(Product product)
